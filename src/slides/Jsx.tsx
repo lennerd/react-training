@@ -39,6 +39,11 @@ export default function Jsx() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
+          <ReactTrainingExample example={"jsx-loop"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
           <ReactTrainingExample example={"jsx-element"} />
         </FlexBox>
       </Slide>
