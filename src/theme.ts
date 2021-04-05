@@ -10,6 +10,7 @@ const theme = {
     secondary: "white",
     tertiary: "#20232a",
     quaternary: "#ffc951",
+    altBackground: "#D75235",
   },
 } as const;
 
