@@ -5,7 +5,9 @@ function Clock() {
   // State-Hook mit initialer State-Wert-Factory
   const [date, setDate] = useState(() => new Date());
 
-  // Aber das Datum ändert sich nicht! 🤔
+  console.log("Render clock …");
+
+  // Aber das Datum ändert sich nicht!
   // setDate??
   return <strong>Es ist {date.toLocaleTimeString()}.</strong>;
 }
