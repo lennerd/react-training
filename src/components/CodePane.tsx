@@ -1,7 +1,14 @@
+import React from "react";
 import { CodePane as SpectacleCodePane } from "spectacle";
 import styled from "styled-components";
 
 const CodePaneOverwrite = styled.div`
+  pre {
+    width: auto !important;
+    display: flex;
+    font-size: 16px !important;
+  }
+
   code {
     font-family: JetBrains Mono, monospace !important;
   }
@@ -13,17 +20,17 @@ const CodePaneOverwrite = styled.div`
 `;
 
 interface CodePaneProps {
-  language: string;
+  language?: string;
   highlightRanges?: (number | [number, number])[];
   theme?: string;
   children: string;
 }
 
 export default function CodePane({
-  language,
+  language = "jsx",
   highlightRanges,
   children,
-  theme,
+  theme = "darcula",
 }: CodePaneProps) {
   return (
     <CodePaneOverwrite>
