@@ -1,5 +1,6 @@
 import React from "react";
 import { FlexBox, Heading, Slide, Text } from "spectacle";
+import CodePane from "../components/CodePane";
 import ReactTrainingExample from "../components/ReactTrainingExample";
 
 export default function Jsx() {
@@ -16,6 +17,27 @@ export default function Jsx() {
           </Heading>
           <Text textAlign="center">JavaScript Syntax Extension</Text>
         </FlexBox>
+      </Slide>
+      <Slide>
+        <Heading fontSize="h4">JSX</Heading>
+        {/* @ts-ignore */}
+        <CodePane
+          // @ts-ignore
+          language="tsx"
+          theme="darcula"
+          highlightRanges={[[3, 8], 5, 6]}
+        >
+          {`const wps = true;
+
+const element = (
+  <div>
+    {wps && <h1>Hallo WPS!</h1>}
+    <strong>Heute ist der {new Date().toLocaleDateString()}</strong>
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById("root"));`}
+        </CodePane>
       </Slide>
       <Slide>
         <FlexBox height="100%">

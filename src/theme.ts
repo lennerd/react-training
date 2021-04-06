@@ -6,11 +6,14 @@ const theme = {
       "system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'",
   },
   colors: {
-    primary: "#61dafb",
-    secondary: "white",
+    primary: "#dbdbdb",
+    secondary: "#ffc951",
     tertiary: "#20232a",
-    quaternary: "#ffc951",
+    quaternary: "#61dafb",
     altBackground: "#D75235",
+  },
+  fontSizes: {
+    h4: 44,
   },
 } as const;
 

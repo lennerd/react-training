@@ -30,7 +30,7 @@ export default function CodeSandbox({ id }: CodeSandboxProps) {
       {renderIframe && (
         <CodeSandboxIframe
           ref={iframeRef}
-          src={`https://codesandbox.io/embed/${id}?autoresize=1&fontsize=14&theme=dark`}
+          src={`https://codesandbox.io/embed/${id}?autoresize=1&fontsize=14&theme=dark&runonclick=1`}
           allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
           sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
         />

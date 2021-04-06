@@ -1,11 +1,20 @@
 import React from "react";
 import { Deck, FlexBox, Slide } from "spectacle";
-import styled, { keyframes } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import logo from "./logo.svg";
+import Clock from "./slides/Clock";
 import Jsx from "./slides/Jsx";
 import Preface from "./slides/Preface";
 import Welcome from "./slides/Welcome";
 import theme from "./theme";
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "JetBrains Mono";
+    font-weight: 400;
+    src: url(/fonts/JetBrainsMono-Regular.woff2);
+  }
+`;
 
 const spin = keyframes`
   from {
@@ -25,6 +34,7 @@ const ReactLogo = styled.img`
 function App() {
   return (
     <Deck theme={theme}>
+      <GlobalStyle />
       <Slide>
         <FlexBox height="100%">
           <ReactLogo src={logo} />
@@ -33,6 +43,7 @@ function App() {
       <Welcome />
       <Preface />
       <Jsx />
+      <Clock />
     </Deck>
   );
 }
