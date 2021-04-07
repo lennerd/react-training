@@ -3,6 +3,7 @@ import { Deck, FlexBox, Heading, Slide } from "spectacle";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import logo from "./logo.svg";
 import Clock from "./slides/Clock";
+import CustomHooks from "./slides/CustomHooks";
 import ExerciseStopWatch from "./slides/ExerciseStopWatch";
 import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
@@ -60,6 +61,7 @@ function App() {
         </FlexBox>
       </Slide>
       <UncontrolledControlled />
+      <CustomHooks />
     </Deck>
   );
 }

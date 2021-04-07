@@ -1,7 +1,7 @@
 import React from "react";
 import { Appear, FlexBox, Heading, Image, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
-import danReactValueUi from "./dan-react-value-ui.jpg";
+import danReactValueUi from "./assets/dan-react-value-ui.jpg";
 
 export default function JsxButWhy() {
   return (
