@@ -22,8 +22,6 @@ export default function Clock({ timeZoneOffset = 0 }: ClockProps) {
   }, [timeZoneOffset]);
 
   return (
-    <strong className={styles.Clock}>
-      Es ist {date.toLocaleTimeString()}.
-    </strong>
+    <div className={styles.Clock}>Es ist {date.toLocaleTimeString()} Uhr.</div>
   );
 }

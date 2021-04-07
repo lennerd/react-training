@@ -8,12 +8,12 @@ export default function App() {
 
   return (
     <div className={styles.App}>
-      <h1>Hallo WPS!</h1>
+      <h1 className={styles.AppHeadline}>Hallo WPS!</h1>
+      <Clock timeZoneOffset={timeZoneOffset} />
       <TimeZoneOffset
         timeZoneOffset={timeZoneOffset}
         onTimeZoneOffsetChange={setTimeZoneOffset}
       />
-      <Clock />
     </div>
   );
 }
