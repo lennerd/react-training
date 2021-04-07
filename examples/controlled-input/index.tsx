@@ -9,12 +9,21 @@ function App() {
   };
 
   return (
-    <div>
-      <label htmlFor="name">Name</label>
-      <br />
-      {/* Input is a controlled component. */}
-      <input id="name" type="text" value={value} onChange={handleChange} />
-    </div>
+    <>
+      <p>
+        <label htmlFor="name">Name:</label>
+        <br />
+        {/* Input is a controlled component. */}
+        <input
+          id="name"
+          type="text"
+          value={value}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </p>
+      <p>Name: {value}</p>
+    </>
   );
 }
 
