@@ -6,6 +6,7 @@ interface NameInputProps {
   onChange(name: string): void;
 }
 
+// Controlled Component
 function NameInput({ name, onChange }: NameInputProps) {
   const [firstName, lastName] = name.replace(/\s+/, " ").split(" ", 2);
 
@@ -19,8 +20,8 @@ function NameInput({ name, onChange }: NameInputProps) {
 
   return (
     <>
-      <div>
-        <label htmlFor="first-name">Vorname</label>
+      <p>
+        <label htmlFor="first-name">Vorname:</label>
         <br />
         {/* Input is a controlled component. */}
         <input
@@ -29,9 +30,9 @@ function NameInput({ name, onChange }: NameInputProps) {
           value={firstName}
           onChange={handleFirstNameChange}
         />
-      </div>
-      <div>
-        <label htmlFor="name">Nachname</label>
+      </p>
+      <p>
+        <label htmlFor="name">Nachname:</label>
         <br />
         {/* Input is a controlled component. */}
         <input
@@ -40,11 +41,12 @@ function NameInput({ name, onChange }: NameInputProps) {
           value={lastName}
           onChange={handleLastNameChange}
         />
-      </div>
+      </p>
     </>
   );
 }
 
+// Uncontrolled Component
 function App() {
   const [name, setName] = useState("Workplace Solutions");
 
