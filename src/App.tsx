@@ -3,7 +3,9 @@ import { Deck, FlexBox, Slide } from "spectacle";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import logo from "./logo.svg";
 import Clock from "./slides/Clock";
+import ExerciseStopWatch from "./slides/ExerciseStopWatch";
 import Jsx from "./slides/Jsx";
+import JsxButWhy from "./slides/JsxButWhy";
 import Preface from "./slides/Preface";
 import Welcome from "./slides/Welcome";
 import theme from "./theme";
@@ -44,6 +46,8 @@ function App() {
       <Preface />
       <Jsx />
       <Clock />
+      <JsxButWhy />
+      <ExerciseStopWatch />
     </Deck>
   );
 }

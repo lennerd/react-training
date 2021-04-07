@@ -20,13 +20,7 @@ export default function Jsx() {
       </Slide>
       <Slide>
         <Heading fontSize="h4">JSX</Heading>
-        {/* @ts-ignore */}
-        <CodePane
-          // @ts-ignore
-          language="tsx"
-          theme="darcula"
-          highlightRanges={[[3, 8], 5, 6]}
-        >
+        <CodePane highlightRanges={[[3, 8], 5, 6]}>
           {`const wps = true;
 
 const element = (

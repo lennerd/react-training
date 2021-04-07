@@ -8,11 +8,7 @@ export default function Clock() {
   return (
     <>
       <Slide>
-        <FlexBox
-          height="100%"
-          // @ts-ignore
-          flexDirection="column"
-        >
+        <FlexBox height="100%" flexDirection="column">
           <Heading fontSize="h3">Clock-Komponente</Heading>
         </FlexBox>
       </Slide>

@@ -14,6 +14,7 @@ const theme = {
   },
   fontSizes: {
     h4: 44,
+    h5: 36,
   },
 } as const;
 
