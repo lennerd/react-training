@@ -39,7 +39,7 @@ export default function ExerciseStopWatch() {
           <Text fontSize="h5">Installieren, nachbauen, rumprobieren!</Text>
 
           <Text fontSize="h5" textAlign="center" lineHeight={2}>
-            <strong>Idee:</strong> Eigene Stopuhr-Komponente bauen!
+            <strong>Idee:</strong> Eigene Stoppuhr-Komponente bauen!
             <br />
             Was ihr dafür braucht: <br />
             <CodeSpan>

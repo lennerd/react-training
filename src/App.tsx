@@ -1,5 +1,5 @@
 import React from "react";
-import { Deck, FlexBox, Slide } from "spectacle";
+import { Deck, FlexBox, Heading, Slide } from "spectacle";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import logo from "./logo.svg";
 import Clock from "./slides/Clock";
@@ -7,6 +7,7 @@ import ExerciseStopWatch from "./slides/ExerciseStopWatch";
 import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
 import Preface from "./slides/Preface";
+import UncontrolledControlled from "./slides/UncontrolledControlled";
 import Welcome from "./slides/Welcome";
 import theme from "./theme";
 
@@ -48,6 +49,17 @@ function App() {
       <Clock />
       <JsxButWhy />
       <ExerciseStopWatch />
+      <Slide>
+        <FlexBox height="100%">
+          <Heading>🥙 🍱 🍔 🍕</Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <Heading>Experten-Nachmittag</Heading>
+        </FlexBox>
+      </Slide>
+      <UncontrolledControlled />
     </Deck>
   );
 }
