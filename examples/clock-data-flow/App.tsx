@@ -12,7 +12,7 @@ export default function App() {
         timeZoneOffset={timeZoneOffset}
         onTimeZoneOffsetChange={setTimeZoneOffset}
       />
-      <Clock />
+      <Clock timeZoneOffset={timeZoneOffset} />
     </div>
   );
 }

@@ -7,19 +7,19 @@ interface TimeZoneOffsetProps {
 
 export default function TimeZoneOffset({
   timeZoneOffset,
-  onTimeZoneOffsetChange,
+  onTimeZoneOffsetChange
 }: TimeZoneOffsetProps) {
   const increaseTimeZoneOffset = () => {
-    onTimeZoneOffsetChange(timeZoneOffset + 1);
+    onTimeZoneOffsetChange((timeZoneOffset + 1) % 24);
   };
 
   const decreaseTimeZoneOffset = () => {
-    onTimeZoneOffsetChange(timeZoneOffset - 1);
+    onTimeZoneOffsetChange((timeZoneOffset - 1) % 24);
   };
 
   return (
     <div>
-      <strong>Aktuelles Zeitzone-Offset: {timeZoneOffset}</strong>
+      <div>Aktuelles Zeitzone-Offset: {timeZoneOffset}</div>
       <button onClick={increaseTimeZoneOffset}>Zeitzone-Offset erhöhen</button>
       <button onClick={decreaseTimeZoneOffset}>
         Zeitzone-Offset verringern
