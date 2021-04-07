@@ -5,7 +5,7 @@ export default function App() {
   const [timeZoneOffset, setTimeZoneOffset] = useState(0);
 
   const handleTimeZoneOffsetChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setTimeZoneOffset(Number(event.target.value));
+    setTimeZoneOffset(Number(event.target.value) % 24);
   };
 
   return (
@@ -20,7 +20,7 @@ export default function App() {
           onChange={handleTimeZoneOffsetChange}
         />
       </div>
-      <Clock />
+      <Clock timeZoneOffset={timeZoneOffset} />
     </div>
   );
 }
