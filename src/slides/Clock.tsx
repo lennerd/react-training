@@ -17,17 +17,18 @@ export default function Clock() {
         </FlexBox>
       </Slide>
       <Slide>
-        <Heading fontSize="h4">
-          JavaScript-Exkurs: destructuring assignment
-        </Heading>
-        <CodePane
-          highlightRanges={[
-            [1, 2],
-            [4, 5],
-            [7, 11],
-          ]}
-        >
-          {`
+        <FlexBox flexDirection="column">
+          <Heading fontSize="h4">
+            JavaScript-Exkurs: destructuring assignment
+          </Heading>
+          <CodePane
+            highlightRanges={[
+              [1, 2],
+              [4, 5],
+              [7, 11],
+            ]}
+          >
+            {`
 const foo = ['one', 'two', 'three'];
 console.log(foo[0], foo[1], foo[2]); // "one", "two", "three"
 
@@ -40,20 +41,22 @@ function deconstruct(options) {
 
 deconstruct({ a: 10, b: 20 }); // 10, 20
           `}
-        </CodePane>
+          </CodePane>
+        </FlexBox>
       </Slide>
       <Slide>
-        <Heading fontSize="h4">
-          JavaScript-Exkurs: destructuring assignment
-        </Heading>
-        <CodePane
-          highlightRanges={[
-            [1, 4],
-            [6, 7],
-            [9, 13],
-          ]}
-        >
-          {`
+        <FlexBox flexDirection="column">
+          <Heading fontSize="h4">
+            JavaScript-Exkurs: destructuring assignment
+          </Heading>
+          <CodePane
+            highlightRanges={[
+              [1, 4],
+              [6, 7],
+              [9, 13],
+            ]}
+          >
+            {`
 const foo = ['one', 'two', 'three'];
 const [one, two, three] = foo;
 
@@ -68,7 +71,8 @@ function deconstruct({ a, b }) {
 
 deconstruct({ a: 10, b: 20 }); // 10, 20
           `}
-        </CodePane>
+          </CodePane>
+        </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">
@@ -90,6 +94,10 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
             <Box>
               <CodeSpan>fn(props) =&gt; UI</CodeSpan>{" "}
             </Box>
+          </Text>
+          <Text textAlign="center">
+            Beginnen mit Großbuchstaben (<CodeSpan>div</CodeSpan> vs.{" "}
+            <CodeSpan>Clock</CodeSpan>)
           </Text>
         </FlexBox>
       </Slide>
@@ -139,6 +147,19 @@ function Counter() {
 }
           `}
           </CodePane>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox flexDirection="column">
+          <Heading fontSize="h4">Angular vs. React: Change Detection</Heading>
+          <Text textAlign="center">
+            <strong>Angular:</strong> <CodeSpan>NgZone</CodeSpan>,
+            Monkey-Patching asynchroner Funktionen (DOM-Events, Outputs,
+            Promises, Observables, …), implizit
+          </Text>
+          <Text textAlign="center">
+            <strong>React:</strong> <CodeSpan>useState</CodeSpan>-Hook, explizit
+          </Text>
         </FlexBox>
       </Slide>
       <Slide>
@@ -198,6 +219,16 @@ function OnlineStatus({ friendId }) {
       <Slide>
         <FlexBox height="100%">
           <ReactTrainingExample example={"clock-use-effect"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"clock-timezone"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"clock-timezone-input"} />
         </FlexBox>
       </Slide>
     </>
