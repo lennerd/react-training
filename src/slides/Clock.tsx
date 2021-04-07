@@ -231,6 +231,16 @@ function OnlineStatus({ friendId }) {
           <ReactTrainingExample example={"clock-timezone-input"} />
         </FlexBox>
       </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"clock-data-flow"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"clock-css-modules"} />
+        </FlexBox>
+      </Slide>
     </>
   );
 }
