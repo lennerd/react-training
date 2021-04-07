@@ -9,14 +9,13 @@ export default function App() {
 
   return (
     <div>
-      <h1>Hallo WPS!</h1>
       <TimeZoneOffset
         timeZoneOffset={timeZoneOffset}
         onTimeZoneOffsetChange={setTimeZoneOffset}
       />
 
-      <p>Es ist {date.toLocaleTimeString()} Uhr.</p>
-      <p>(Ohne Zeitzonen-Offset: {dateWithOffset.toLocaleTimeString()} Uhr)</p>
+      <p>Es ist {dateWithOffset.toLocaleTimeString()} Uhr.</p>
+      <p>(Ohne Zeitzonen-Offset: {date.toLocaleTimeString()} Uhr)</p>
     </div>
   );
 }
