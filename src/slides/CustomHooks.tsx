@@ -42,12 +42,18 @@ export default function CustomHooks() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"custom-hook-clock"} />
+          <ReactTrainingExample
+            example={"custom-hook-clock"}
+            module="/App.tsx"
+          />
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"custom-hook-window-size"} />
+          <ReactTrainingExample
+            example={"custom-hook-window-size"}
+            module="/App.tsx"
+          />
         </FlexBox>
       </Slide>
     </>

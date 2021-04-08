@@ -39,7 +39,11 @@ export default function ExerciseTourOfHeroesPartTwo() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"exercise-tour-of-heroes"} />
+          <ReactTrainingExample
+            example={"exercise-tour-of-heroes"}
+            view="preview"
+            runOnClick={false}
+          />
         </FlexBox>
       </Slide>
     </>

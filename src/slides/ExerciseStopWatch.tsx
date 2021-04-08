@@ -51,7 +51,11 @@ export default function ExerciseStopWatch() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"exercise-stop-watch"} />
+          <ReactTrainingExample
+            example={"exercise-stop-watch"}
+            view="preview"
+            runOnClick={false}
+          />
         </FlexBox>
       </Slide>
     </>

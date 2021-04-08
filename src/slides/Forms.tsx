@@ -15,7 +15,10 @@ export default function Forms() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-form"} />
+          <ReactTrainingExample
+            example={"heroes-react-form"}
+            module="/HeroEditor.tsx"
+          />
         </FlexBox>
       </Slide>
       <Slide>
@@ -67,7 +70,10 @@ export default function App({ hero }) {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-hook-form"} />
+          <ReactTrainingExample
+            example={"heroes-react-hook-form"}
+            module="/HeroEditor.tsx"
+          />
         </FlexBox>
       </Slide>
     </>

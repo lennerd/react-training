@@ -38,7 +38,12 @@ export default function ExerciseTourOfHeroesPartOne() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-query"} />
+          <ReactTrainingExample
+            example={"heroes-react-query"}
+            module="/HeroLister.tsx"
+            view="preview"
+            runOnClick={false}
+          />
         </FlexBox>
       </Slide>
     </>

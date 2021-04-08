@@ -39,7 +39,10 @@ getHeroes()
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-promise-hook"} />
+          <ReactTrainingExample
+            example={"heroes-promise-hook"}
+            module="/App.tsx"
+          />
         </FlexBox>
       </Slide>
       <Slide>
@@ -58,9 +61,11 @@ getHeroes()
             Synchronisation von Daten mit React
           </Text>
           <Text textAlign="center" lineHeight={1.5}>
-            Auto Refetching, Auto Caching, Polling/Realtime Queries, Window
-            Focus Refetching, Prefetching, Request Cancellation, Dedicated
-            Devtools, …
+            Auto Refetching, Auto Caching, Polling/Realtime Queries,
+            <br />
+            Window Focus Refetching, Prefetching, Request Cancellation,
+            <br />
+            Dedicated Devtools, …
           </Text>
         </FlexBox>
       </Slide>
@@ -90,7 +95,10 @@ function App() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-query"} />
+          <ReactTrainingExample
+            example={"heroes-react-query"}
+            module="/HeroLister.tsx"
+          />
         </FlexBox>
       </Slide>
     </>

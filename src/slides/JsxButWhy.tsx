@@ -33,26 +33,26 @@ export default function JsxButWhy() {
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <Heading fontSize="h4" color="quaternary">
-            Rendering logic and UI logic are highly cohesive:
+            Rendering-Logik and UI-Logik sind stark kohäsiv:
           </Heading>
           <Text textAlign="center" lineHeight={2}>
-            event handling,
+            Event-Handling,
             <br />
-            state changes over time,
+            Zustands-Änderungen über die Zeit,
             <br />
-            preparation of data for display.
+            Datenvorbereitung für Darstellung.
           </Text>
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <Heading fontSize="h4" color="quaternary">
-            JSX & React components:
+            JSX & React-Komponenten:
           </Heading>
           <Text textAlign="center" lineHeight={2}>
-            highly cohesive building block for UIs
+            stark kohäsive UI-Bausteine
             <br />
-            loosely coupled with other components
+            lose gekoppelt mit anderen Komponenten
           </Text>
         </FlexBox>
       </Slide>
@@ -74,7 +74,7 @@ export default function JsxButWhy() {
           <Text textAlign="center" lineHeight={2}>
             Zugänglichkeit von Templates
             <br />
-            mit der Mächtigkeit von JavaScript/TypeScript.
+            ohne neu zu lernende Abstraktion!
           </Text>
         </FlexBox>
       </Slide>
@@ -106,6 +106,20 @@ ReactDOM.render(element, document.getElementById("root"));`}
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <Image width="50%" src={danReactValueUi} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading
+            fontSize="h4"
+            color="quaternary"
+            opacity={0.2}
+            lineHeight={1.5}
+          >
+            TODO
+            <br />
+            “Inversion of Control ist sau elegant in React”
+          </Heading>
         </FlexBox>
       </Slide>
       <Slide>

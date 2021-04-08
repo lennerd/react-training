@@ -67,7 +67,10 @@ function App() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-router"} />
+          <ReactTrainingExample
+            example={"heroes-react-router"}
+            module="/TourOfHeroes.tsx"
+          />
         </FlexBox>
       </Slide>
     </>
