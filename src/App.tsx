@@ -81,6 +81,7 @@ function App() {
             frameBorder="0"
             className="giphy-embed"
             allowFullScreen
+            title="Computer Kid"
           />
         </FlexBox>
       </Slide>
