@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Hero } from "../api";
 import HeroPowerRange from "./HeroPowerRange";
-import useHero from "./useHero";
 
 interface HeroFormData {
   name: string;
@@ -14,21 +13,20 @@ interface HeroFormData {
   combat: number;
 }
 
-export default function HeroEditor() {
-  const { slug } = useParams<{ slug: string }>();
-  const { hero, updateHero } = useHero(slug);
+interface HeroEditorProps {
+  hero: Hero;
+  onSubmit(hero: Hero): void;
+}
+
+export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
   const { register, handleSubmit } = useForm<HeroFormData>();
 
-  if (hero == null) {
-    return <div>Loading hero …</div>;
-  }
-
-  const onSubmit = handleSubmit((formData) => {
+  const handleSubmitForm = handleSubmit((formData) => {
     if (hero == null) {
       return;
     }
 
-    updateHero({
+    onSubmit({
       ...hero,
       name: formData.name,
       appearance: {
@@ -48,9 +46,7 @@ export default function HeroEditor() {
   });
 
   return (
-    <form onSubmit={onSubmit}>
-      <h2 className="font-bold text-2xl text-blue-600">{hero.name}</h2>
-
+    <form onSubmit={handleSubmitForm}>
       <label className="pt-3 flex items-baseline">
         Name:
         <input

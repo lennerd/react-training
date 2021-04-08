@@ -1,28 +1,20 @@
-import { Link } from "react-router-dom";
+import classNames from "classnames";
 import { Hero } from "../api";
-
-interface HeroCardProps {
-  hero: Hero;
-}
-
-function HeroCard({ hero }: HeroCardProps) {
-  return (
-    <Link
-      to={`/heroes/${hero.slug}`}
-      className="px-4 py-3 bg-white rounded overflow-hidden"
-    >
-      {hero.name}
-    </Link>
-  );
-}
+import HeroCard from "./HeroCard";
 
 interface HeroGridProps {
   heroes: Hero[];
+  className?: string;
 }
 
-export default function HeroGrid({ heroes }: HeroGridProps) {
+export default function HeroGrid({ heroes, className }: HeroGridProps) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div
+      className={classNames(
+        "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4",
+        className
+      )}
+    >
       {heroes.map((hero) => (
         <HeroCard key={hero.id} hero={hero} />
       ))}

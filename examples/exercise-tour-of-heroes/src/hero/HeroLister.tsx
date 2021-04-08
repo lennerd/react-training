@@ -24,7 +24,7 @@ export default function HeroLister() {
         {heroes != null ? (
           <HeroGrid heroes={heroes} />
         ) : (
-          <p>Loading heroes …</p>
+          <div>Loading heroes …</div>
         )}
       </div>
 

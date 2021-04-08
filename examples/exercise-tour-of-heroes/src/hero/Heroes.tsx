@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import HeroLister from "./HeroLister";
-import HeroEditor from "./HeroEditor";
+import HeroViewer from "./HeroViewer";
 
 export default function Heroes() {
   return (
@@ -9,7 +9,7 @@ export default function Heroes() {
         <HeroLister />
       </Route>
       <Route path="/heroes/:slug">
-        <HeroEditor />
+        <HeroViewer />
       </Route>
     </Switch>
   );
