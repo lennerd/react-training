@@ -67,7 +67,7 @@ function App() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"heroes-react-query"} />
+          <ReactTrainingExample example={"heroes-react-router"} />
         </FlexBox>
       </Slide>
     </>
