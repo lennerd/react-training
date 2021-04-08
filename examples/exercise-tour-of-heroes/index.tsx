@@ -1,8 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter as Router } from "react-router-dom";
+import TourOfHeroes from "./src/TourOfHeroes";
 
-function TourOfHeroes() {
-  return null;
-}
+const queryClient = new QueryClient();
 
-ReactDOM.render(<TourOfHeroes />, document.getElementById("root"));
+ReactDOM.render(
+  <Router>
+    <QueryClientProvider client={queryClient}>
+      <TourOfHeroes />
+    </QueryClientProvider>
+  </Router>,
+  document.getElementById("root")
+);
