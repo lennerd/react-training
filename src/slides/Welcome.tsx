@@ -79,7 +79,7 @@ export default function Welcome() {
               <TableCell>13:30-14:30</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Formulare, Routing</TableCell>
+              <TableCell>Routing, Formulare</TableCell>
               <TableCell>14:30-15:00</TableCell>
             </TableRow>
             <TableRow>

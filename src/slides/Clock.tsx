@@ -8,12 +8,7 @@ export default function Clock() {
   return (
     <>
       <Slide>
-        <FlexBox height="100%" flexDirection="column">
-          <Heading fontSize="h3">Clock-Komponente</Heading>
-        </FlexBox>
-      </Slide>
-      <Slide>
-        <FlexBox flexDirection="column">
+        <FlexBox flexDirection="column" height="100%">
           <Heading fontSize="h4">
             JavaScript-Exkurs: destructuring assignment
           </Heading>
@@ -41,7 +36,7 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
         </FlexBox>
       </Slide>
       <Slide>
-        <FlexBox flexDirection="column">
+        <FlexBox flexDirection="column" height="100%">
           <Heading fontSize="h4">
             JavaScript-Exkurs: destructuring assignment
           </Heading>
@@ -71,6 +66,11 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
         </FlexBox>
       </Slide>
       <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h3">Clock-Komponente</Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
         <FlexBox height="100%">
           <ReactTrainingExample example={"clock-tick"} />
         </FlexBox>
@@ -86,10 +86,7 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
             Unabhängige, wiederverwendbare UI-Bausteine
           </Text>
           <Text textAlign="center">
-            <Box mb={1}>Wie JavaScript-Funktionen:</Box>
-            <Box>
-              <CodeSpan>fn(props) =&gt; UI</CodeSpan>{" "}
-            </Box>
+            <CodeSpan>fn(props) =&gt; UI</CodeSpan>
           </Text>
           <Text textAlign="center">
             Beginnen mit Großbuchstaben (<CodeSpan>div</CodeSpan> vs.{" "}
@@ -103,20 +100,22 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
         </FlexBox>
       </Slide>
       <Slide>
-        <Heading fontSize="h4">Reusable Component?</Heading>
-        <Text textAlign="center">
-          <CodeSpan>setInterval</CodeSpan> und <CodeSpan>date</CodeSpan> sind
-          Details der Implementierung
-        </Text>
-        <Text textAlign="center">
-          Datum: <strong>State</strong> der Komponente
-        </Text>
-        <Text textAlign="center">
-          Interval: <strong>Effekt</strong>, der Datum-State aktualisiert
-        </Text>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4">Wiederverwendbare Komponenten?</Heading>
+          <Text textAlign="center">
+            <CodeSpan>setInterval</CodeSpan> und <CodeSpan>date</CodeSpan> sind
+            Details der Implementierung
+          </Text>
+          <Text textAlign="center">
+            Datum: <strong>State</strong> der Komponente
+          </Text>
+          <Text textAlign="center">
+            Interval: <strong>Effekt</strong>, der Datum-State aktualisiert
+          </Text>
+        </FlexBox>
       </Slide>
       <Slide>
-        <FlexBox flexDirection="column">
+        <FlexBox height="100%" flexDirection="column">
           <Heading fontSize="h4">
             <CodeSpan>useState</CodeSpan>-Hook
           </Heading>
@@ -146,7 +145,7 @@ function Counter() {
         </FlexBox>
       </Slide>
       <Slide>
-        <FlexBox flexDirection="column">
+        <FlexBox flexDirection="column" height="100%">
           <Heading fontSize="h4">Angular vs. React: Change Detection</Heading>
           <Text textAlign="center">
             <strong>Angular:</strong> <CodeSpan>NgZone</CodeSpan>,
@@ -218,23 +217,61 @@ function OnlineStatus({ friendId }) {
         </FlexBox>
       </Slide>
       <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4" color="quaternary">
+            Kommunikation zwischen Komponenten
+          </Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox flexDirection="column" height="100%">
+          <Heading fontSize="h4">
+            Angular vs. React:
+            <br />
+            Kommunikation zwischen Komponente
+          </Heading>
+          <Text textAlign="center">
+            <strong>Angular:</strong> <CodeSpan>@Input</CodeSpan>,{" "}
+            <CodeSpan>@Output</CodeSpan>
+          </Text>
+          <Text textAlign="center">
+            <strong>React:</strong> <CodeSpan>props</CodeSpan> (Wertübergabe,
+            <br />
+            Rückgabe von Werten über Callbacks)
+          </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
         <FlexBox height="100%">
           <ReactTrainingExample example={"clock-timezone"} />
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"clock-timezone-input"} />
+          <ReactTrainingExample
+            example={"clock-timezone-input"}
+            module="/App.tsx"
+          />
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"clock-data-flow"} />
+          <ReactTrainingExample example={"clock-data-flow"} module="/App.tsx" />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4" color="quaternary">
+            Styling von Komponenten
+          </Heading>
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"clock-css-modules"} />
+          <ReactTrainingExample
+            example={"clock-css-modules"}
+            module="/App.tsx"
+          />
         </FlexBox>
       </Slide>
     </>

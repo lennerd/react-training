@@ -19,9 +19,14 @@ export default function Jsx() {
         </FlexBox>
       </Slide>
       <Slide>
-        <Heading fontSize="h4">JSX</Heading>
-        <CodePane highlightRanges={[[3, 8], 5, 6]}>
-          {`const wps = true;
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4">
+            <del>JSX</del> TSX
+          </Heading>
+          <CodePane highlightRanges={[[3, 8], 5, 6]}>
+            {`// index.tsx <- Watchout for file ending tsx
+
+const wps = true;
 
 const element = (
   <div>
@@ -31,7 +36,8 @@ const element = (
 );
 
 ReactDOM.render(element, document.getElementById("root"));`}
-        </CodePane>
+          </CodePane>
+        </FlexBox>
       </Slide>
       <Slide>
         <FlexBox height="100%">

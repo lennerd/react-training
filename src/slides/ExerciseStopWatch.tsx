@@ -34,7 +34,7 @@ export default function ExerciseStopWatch() {
       </Slide>
       <Slide>
         <FlexBox height="100%" flexDirection="column">
-          <Heading fontSize="h3">1. Aufgabenstellung</Heading>
+          <Heading fontSize="h3">1. Aufgabe</Heading>
 
           <Text fontSize="h5">Installieren, nachbauen, rumprobieren!</Text>
 

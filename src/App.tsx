@@ -1,10 +1,12 @@
 import React from "react";
-import { Deck, FlexBox, Heading, Slide } from "spectacle";
+import { Deck, FlexBox, Heading, Slide, Text } from "spectacle";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import logo from "./logo.svg";
 import Clock from "./slides/Clock";
 import CustomHooks from "./slides/CustomHooks";
 import ExerciseStopWatch from "./slides/ExerciseStopWatch";
+import ExerciseTourOfHeroesPartOne from "./slides/ExerciseTourOfHeroesPartOne";
+import ExerciseTourOfHeroesPartTwo from "./slides/ExerciseTourOfHeroesPartTwo";
 import Forms from "./slides/Forms";
 import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
@@ -66,8 +68,38 @@ function App() {
       <UncontrolledControlled />
       <CustomHooks />
       <ReactQuery />
+      <ExerciseTourOfHeroesPartOne />
       <ReactRouter />
       <Forms />
+      <ExerciseTourOfHeroesPartTwo />
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <iframe
+            src="https://giphy.com/embed/ioeQEPFDeS8s8"
+            width="480"
+            height="292"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h3">Und, wie wars?</Heading>
+
+          <Text fontSize="h5">Was hat euch gut gefallen? Was weniger?</Text>
+
+          <Text fontSize="h5">
+            Wo fühlt ihr euch gut abgeholt? Wo fehlt euch noch Wissen?
+          </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <Heading color="quaternary">Danke!</Heading>
+        </FlexBox>
+      </Slide>
     </Deck>
   );
 }

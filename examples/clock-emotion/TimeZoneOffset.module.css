@@ -1,0 +1,21 @@
+.TimeZoneOffset {
+  display: flex;
+  padding: 1rem;
+  background-color: lightsteelblue;
+  align-items: center;
+  border-radius: 0.75rem;
+}
+
+.TimeZoneOffset > * + * {
+  margin-left: 1rem;
+}
+
+.TimeZoneOffsetButton {
+  font: inherit;
+  appearance: none;
+  border: 0;
+  background-color: darkblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}

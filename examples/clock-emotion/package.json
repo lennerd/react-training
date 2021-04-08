@@ -1,0 +1,13 @@
+{
+  "name": "react-training-jsx-1",
+  "private": true,
+  "main": "index.tsx",
+  "dependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
+    "typescript-plugin-css-modules": "3.2.0"
+  }
+}
