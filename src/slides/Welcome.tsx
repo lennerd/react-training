@@ -13,7 +13,9 @@ import {
   TableCell,
   // @ts-ignore
   TableBody,
+  Image,
 } from "spectacle";
+import lennerdLovesReact from "./assets/lennerd-loves-react.jpg";
 
 export default function Welcome() {
   return (
@@ -35,6 +37,11 @@ export default function Welcome() {
           height="100%"
         >
           <Heading color="quaternary">Einführung in React</Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Image width="50%" src={lennerdLovesReact} />
         </FlexBox>
       </Slide>
       <Slide>
