@@ -23,7 +23,7 @@ export default function Jsx() {
           <Heading fontSize="h4">
             <del>JSX</del> TSX
           </Heading>
-          <CodePane highlightRanges={[[3, 8], 5, 6]}>
+          <CodePane highlightRanges={[[5, 10], 7, 8]}>
             {`// index.tsx <- Watchout for file ending tsx
 
 const wps = true;
