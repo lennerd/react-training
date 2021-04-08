@@ -10,7 +10,7 @@ function Clock() {
       // After mount/init …
       const interval = setInterval(() => {
         setDate(new Date());
-      });
+      }, 1000);
 
       return () => {
         // Before unmount/destroy …
