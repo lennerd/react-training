@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// element = <h1 className="text-red-500">Hallo WPS!</h1>;
+const element = <h1 className="text-red-500">Hallo WPS!</h1>;
 // … wird umgewandelt in …
-const element = React.createElement(
+/* const element = React.createElement(
   "h1",
   { className: "text-red-500" },
   "Hallo WPS!"
-);
+);*/
 
-console.log(element);
+// console.log(element);
 // {
 //   type: "h1",
 //   props: {
