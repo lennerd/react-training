@@ -1,5 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { QueryClient, QueryClientProvider } from "react-query";
+import HeroLister from "./HeroLister";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const client = new QueryClient();
+
+ReactDOM.render(
+  <QueryClientProvider client={client}>
+    <HeroLister />
+  </QueryClientProvider>,
+  document.getElementById("root")
+);

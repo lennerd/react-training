@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export interface Powerstats {
   intelligence: number;
   strength: number;
@@ -55,12 +57,16 @@ export interface Hero {
   images: Images;
 }
 
-export async function getHeroes(): Promise<Hero[]> {
-  const res = await fetch("/heroes.json");
+export async function getHeroes(filter: string): Promise<Hero[]> {
+  const { data: heroes } = await axios.get<Hero[]>("/heroes.json");
 
-  if (!res.ok) {
-    throw new Error(res.statusText);
-  }
+  const lowercaseFilter = filter.toLocaleLowerCase();
+  const filteredHeroes =
+    lowercaseFilter.length > 0
+      ? heroes.filter((hero) =>
+          hero.name.toLocaleLowerCase().includes(lowercaseFilter)
+        )
+      : heroes;
 
-  return res.json();
+  return filteredHeroes;
 }
