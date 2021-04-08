@@ -8,6 +8,7 @@ import ExerciseStopWatch from "./slides/ExerciseStopWatch";
 import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
 import Preface from "./slides/Preface";
+import ReactQuery from "./slides/ReactQuery";
 import UncontrolledControlled from "./slides/UncontrolledControlled";
 import Welcome from "./slides/Welcome";
 import theme from "./theme";
@@ -62,6 +63,7 @@ function App() {
       </Slide>
       <UncontrolledControlled />
       <CustomHooks />
+      <ReactQuery />
     </Deck>
   );
 }

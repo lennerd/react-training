@@ -47,11 +47,6 @@ export default function CustomHooks() {
       </Slide>
       <Slide>
         <FlexBox height="100%">
-          <ReactTrainingExample example={"custom-hook-promise"} />
-        </FlexBox>
-      </Slide>
-      <Slide>
-        <FlexBox height="100%">
           <ReactTrainingExample example={"custom-hook-window-size"} />
         </FlexBox>
       </Slide>
