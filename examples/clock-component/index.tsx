@@ -22,3 +22,5 @@ function tick() {
 
 tick();
 setInterval(tick, 1000);
+
+// Watch ReactDevTools!
