@@ -274,6 +274,11 @@ function OnlineStatus({ friendId }) {
           />
         </FlexBox>
       </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"clock-emotion"} module="/App.tsx" />
+        </FlexBox>
+      </Slide>
     </>
   );
 }
