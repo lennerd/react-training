@@ -7,7 +7,7 @@ interface HeroEditorProps {
   onSubmit(hero: Hero): void;
 }
 
-export default function HeroEditor({ hero }: HeroEditorProps) {
+export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
   const [name, setName] = useState(hero.name);
   const [gender, setGender] = useState(hero.appearance.gender);
   const [intelligence, setIntelligence] = useState(
@@ -22,10 +22,13 @@ export default function HeroEditor({ hero }: HeroEditorProps) {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    console.log({
+    onSubmit({
       ...hero,
       name,
-      gender,
+      appearance: {
+        ...hero.appearance,
+        gender
+      },
       powerstats: {
         ...hero.powerstats,
         intelligence,
@@ -90,7 +93,7 @@ export default function HeroEditor({ hero }: HeroEditorProps) {
           type="submit"
           className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
         >
-          Save
+          Save Hero
         </button>
       </div>
     </form>

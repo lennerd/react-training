@@ -65,12 +65,12 @@ export default function HeroViewer() {
             to={`/heroes/${hero.slug}/edit`}
             className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300 mt-4"
           >
-            Bearbeiten
+            Edit Hero
           </Link>
         </Route>
 
         <Route path={`/heroes/${hero.slug}/edit`}>
-          <HeroEditor hero={hero} />
+          <HeroEditor hero={hero} onSubmit={console.log} />
         </Route>
       </Switch>
     </>
