@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexBox, Heading, Slide } from "spectacle";
+import { FlexBox, Heading, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
 import CodeSpan from "../components/CodeSpan";
 import ReactTrainingExample from "../components/ReactTrainingExample";
@@ -40,6 +40,28 @@ getHeroes()
       <Slide>
         <FlexBox height="100%">
           <ReactTrainingExample example={"heroes-promise-hook"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4" lineHeight={2} color="quaternary">
+            ReactQuery
+          </Heading>
+          <Text textAlign="center" lineHeight={1.5}>
+            Mächtige Bibliothek für die
+            <br />
+            Synchronisation von Daten mit React
+          </Text>
+          <Text textAlign="center" lineHeight={1.5}>
+            Auto Refetching, Auto Caching, Polling/Realtime Queries, Window
+            Focus Refetching, Prefetching, Request Cancellation, Dedicated
+            Devtools, …
+          </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample example={"heroes-react-query"} />
         </FlexBox>
       </Slide>
     </>
