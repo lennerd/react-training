@@ -1,6 +1,17 @@
-import { FormEvent, useState } from "react";
+import { useForm } from "react-hook-form";
 import { Hero } from "./api";
 import HeroPowerRange from "./HeroPowerRange";
+
+interface HeroFormData {
+  name: string;
+  gender: "male" | "female";
+  intelligence: number;
+  strength: number;
+  speed: number;
+  durability: number;
+  power: number;
+  combat: number;
+}
 
 interface HeroEditorProps {
   hero: Hero;
@@ -8,56 +19,53 @@ interface HeroEditorProps {
 }
 
 export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
-  const [name, setName] = useState(hero.name);
-  const [gender, setGender] = useState(hero.appearance.gender);
-  const [intelligence, setIntelligence] = useState(
-    hero.powerstats.intelligence
-  );
-  const [strength, setStrength] = useState(hero.powerstats.strength);
-  const [durability, setDurability] = useState(hero.powerstats.durability);
-  const [speed, setSpeed] = useState(hero.powerstats.speed);
-  const [power, setPower] = useState(hero.powerstats.power);
-  const [combat, setCombat] = useState(hero.powerstats.combat);
+  const { register, handleSubmit } = useForm<HeroFormData>();
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
+  if (hero == null) {
+    return <div>Loading hero …</div>;
+  }
+
+  const handleSubmitForm = handleSubmit((formData) => {
+    if (hero == null) {
+      return;
+    }
 
     onSubmit({
       ...hero,
-      name,
+      name: formData.name,
       appearance: {
         ...hero.appearance,
-        gender
+        gender: formData.gender
       },
       powerstats: {
         ...hero.powerstats,
-        intelligence,
-        strength,
-        durability,
-        speed,
-        power,
-        combat
+        intelligence: formData.intelligence,
+        strength: formData.strength,
+        speed: formData.speed,
+        durability: formData.durability,
+        power: formData.power,
+        combat: formData.combat
       }
     });
-  };
+  });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmitForm}>
       <label className="pt-3 flex items-baseline">
         Name:
         <input
-          value={name}
+          defaultValue={hero.name}
           className="ml-3 px-3 py-2 w-full border rounded"
-          onChange={(event) => setName(event.target.value)}
+          {...register("name")}
         />
       </label>
 
       <label className="pt-3 flex items-baseline">
         Gender:
         <select
-          value={gender}
+          defaultValue={hero.appearance.gender}
           className="ml-3 px-3 py-2 w-full border rounded"
-          onChange={(event) => setGender(event.target.value)}
+          {...register("gender")}
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -65,35 +73,47 @@ export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
       </label>
 
       <HeroPowerRange
-        value={intelligence}
+        defaultValue={hero.powerstats.intelligence}
         label="Intelligence:"
-        onChange={setIntelligence}
+        {...register("intelligence", { valueAsNumber: true })}
       />
 
       <HeroPowerRange
-        value={strength}
+        defaultValue={hero.powerstats.strength}
         label="Strength:"
-        onChange={setStrength}
+        {...register("strength", { valueAsNumber: true })}
       />
-
-      <HeroPowerRange value={speed} label="Speed:" onChange={setSpeed} />
 
       <HeroPowerRange
-        value={durability}
-        label="Durability:"
-        onChange={setDurability}
+        defaultValue={hero.powerstats.speed}
+        label="Speed:"
+        {...register("speed", { valueAsNumber: true })}
       />
 
-      <HeroPowerRange value={power} label="Power:" onChange={setPower} />
+      <HeroPowerRange
+        defaultValue={hero.powerstats.durability}
+        label="Durability:"
+        {...register("durability", { valueAsNumber: true })}
+      />
 
-      <HeroPowerRange value={combat} label="Combat:" onChange={setCombat} />
+      <HeroPowerRange
+        defaultValue={hero.powerstats.power}
+        label="Power:"
+        {...register("power", { valueAsNumber: true })}
+      />
+
+      <HeroPowerRange
+        defaultValue={hero.powerstats.combat}
+        label="Combat:"
+        {...register("combat", { valueAsNumber: true })}
+      />
 
       <div className="mt-4">
         <button
           type="submit"
           className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
         >
-          Save Hero
+          Save
         </button>
       </div>
     </form>
