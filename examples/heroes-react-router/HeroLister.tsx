@@ -8,7 +8,7 @@ export default function HeroLister() {
   const heroes = useHeroes(filter);
 
   return (
-    <div className="p-4 bg-gray-100">
+    <>
       <h2 className="font-bold text-2xl text-blue-600">Heroes</h2>
 
       <HeroFilter className="pt-3" filter={filter} onChange={setFilter} />
@@ -20,6 +20,6 @@ export default function HeroLister() {
           <p>Loading heroes …</p>
         )}
       </div>
-    </div>
+    </>
   );
 }

@@ -67,3 +67,14 @@ export async function getHeroes(filter: string): Promise<Hero[]> {
       )
     : heroes;
 }
+
+export async function getHero(slug: string): Promise<Hero> {
+  const { data: heroes } = await axios.get<Hero[]>("/heroes.json");
+  const hero = heroes.find((hero) => hero.slug === slug);
+
+  if (hero == null) {
+    throw new Error("Hero not found.");
+  }
+
+  return hero;
+}
