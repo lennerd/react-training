@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexBox, Heading, Slide, Text } from "spectacle";
+import { FlexBox, Heading, Link, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
 import CodeSpan from "../components/CodeSpan";
 import ReactTrainingExample from "../components/ReactTrainingExample";
@@ -44,9 +44,14 @@ getHeroes()
       </Slide>
       <Slide>
         <FlexBox height="100%" flexDirection="column">
-          <Heading fontSize="h4" lineHeight={2} color="quaternary">
+          <Heading fontSize="h4" lineHeight={1} color="secondary">
             ReactQuery
           </Heading>
+          <Text textAlign="center" lineHeight={1.5}>
+            <Link href="https://react-query.tanstack.com/" target="_blank">
+              react-query.tanstack.com
+            </Link>
+          </Text>
           <Text textAlign="center" lineHeight={1.5}>
             Mächtige Bibliothek für die
             <br />
@@ -57,6 +62,30 @@ getHeroes()
             Focus Refetching, Prefetching, Request Cancellation, Dedicated
             Devtools, …
           </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4" color="secondary">
+            ReactQuery-API
+          </Heading>
+          <CodePane highlightRanges={[6, [7, 12]]}>{`
+import { useQueryClient, useQuery, useMutation } from 'react-query'
+import { getHeroes, postHero } from './api'; 
+
+function App() {
+  const queryClient = useQueryClient();
+  const { data, isLoading, error } = useQuery('heroes', getHeroes);
+  const { mutate } = useMutation(postHero, {
+    onSuccess: () => {
+      // Invalidate and refetch heroes query
+      queryClient.invalidateQueries('heroes');
+    },
+  }));
+
+  // Render heroes …
+}
+ `}</CodePane>
         </FlexBox>
       </Slide>
       <Slide>

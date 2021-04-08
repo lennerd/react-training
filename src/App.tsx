@@ -9,6 +9,7 @@ import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
 import Preface from "./slides/Preface";
 import ReactQuery from "./slides/ReactQuery";
+import ReactRouter from "./slides/ReactRouter";
 import UncontrolledControlled from "./slides/UncontrolledControlled";
 import Welcome from "./slides/Welcome";
 import theme from "./theme";
@@ -64,6 +65,7 @@ function App() {
       <UncontrolledControlled />
       <CustomHooks />
       <ReactQuery />
+      <ReactRouter />
     </Deck>
   );
 }
