@@ -1,5 +1,9 @@
+import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
-import styles from "./Clock.module.css";
+
+const ClockWrapper = styled.div`
+  font-weight: bold;
+`;
 
 interface ClockProps {
   timeZoneOffset?: number;
@@ -21,7 +25,5 @@ export default function Clock({ timeZoneOffset = 0 }: ClockProps) {
     };
   }, [timeZoneOffset]);
 
-  return (
-    <div className={styles.Clock}>Es ist {date.toLocaleTimeString()} Uhr.</div>
-  );
+  return <ClockWrapper>Es ist {date.toLocaleTimeString()} Uhr.</ClockWrapper>;
 }

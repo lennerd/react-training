@@ -1,5 +1,27 @@
+import styled from "@emotion/styled";
 import React from "react";
-import styles from "./TimeZoneOffset.module.css";
+
+const TimeZoneOffsetWrapper = styled.div`
+  display: flex;
+  padding: 1rem;
+  background-color: lightsteelblue;
+  align-items: center;
+  border-radius: 0.75rem;
+
+  & > * + * {
+    margin-left: 1rem;
+  }
+`;
+
+const TimeZoneOffsetButton = styled.button`
+  font: inherit;
+  appearance: none;
+  border: 0;
+  background-color: darkblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+`;
 
 interface TimeZoneOffsetProps {
   timeZoneOffset: number;
@@ -19,20 +41,14 @@ export default function TimeZoneOffset({
   };
 
   return (
-    <div className={styles.TimeZoneOffset}>
-      <button
-        className={styles.TimeZoneOffsetButton}
-        onClick={increaseTimeZoneOffset}
-      >
+    <TimeZoneOffsetWrapper>
+      <TimeZoneOffsetButton onClick={increaseTimeZoneOffset}>
         +
-      </button>
+      </TimeZoneOffsetButton>
       <div>Zeitzone-Offset: {timeZoneOffset}</div>
-      <button
-        className={styles.TimeZoneOffsetButton}
-        onClick={decreaseTimeZoneOffset}
-      >
+      <TimeZoneOffsetButton onClick={decreaseTimeZoneOffset}>
         &ndash;
-      </button>
-    </div>
+      </TimeZoneOffsetButton>
+    </TimeZoneOffsetWrapper>
   );
 }

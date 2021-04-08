@@ -1,19 +1,39 @@
 import React, { useState } from "react";
 import Clock from "./Clock";
 import TimeZoneOffset from "./TimeZoneOffset";
-import styles from "./App.module.css";
+import styled from "@emotion/styled";
+
+const AppWrapper = styled.div`
+  padding: 0.75rem 1rem;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+`;
+
+const AppHeadline = styled.div`
+  color: orangered;
+  margin: 0;
+  text-align: center;
+`;
 
 export default function App() {
   const [timeZoneOffset, setTimeZoneOffset] = useState(0);
 
   return (
-    <div className={styles.App}>
-      <h1 className={styles.AppHeadline}>Hallo WPS!</h1>
+    <AppWrapper>
+      <AppHeadline>Hallo WPS!</AppHeadline>
       <Clock timeZoneOffset={timeZoneOffset} />
       <TimeZoneOffset
         timeZoneOffset={timeZoneOffset}
         onTimeZoneOffsetChange={setTimeZoneOffset}
       />
-    </div>
+    </AppWrapper>
   );
 }
