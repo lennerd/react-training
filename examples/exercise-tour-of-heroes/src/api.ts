@@ -69,21 +69,35 @@ function fakeApiRequest<T>(data: T) {
 
 let heroes: Hero[] = data;
 
+export async function getHeroes(): Promise<{
+  heroes: Hero[];
+  numberOfHeroes: number;
+}>;
 export async function getHeroes(
   filter: string,
   offset: number,
   limit: number
+): Promise<{ heroes: Hero[]; numberOfHeroes: number }>;
+export async function getHeroes(
+  filter?: string,
+  offset?: number,
+  limit?: number
 ): Promise<{ heroes: Hero[]; numberOfHeroes: number }> {
-  const lowercaseFilter = filter.toLocaleLowerCase();
+  const lowercaseFilter = filter?.toLocaleLowerCase();
   const filteredHeroes =
-    lowercaseFilter.length > 0
+    lowercaseFilter != null && lowercaseFilter.length > 0
       ? heroes.filter((hero) =>
           hero.name.toLocaleLowerCase().includes(lowercaseFilter)
         )
       : heroes;
 
+  const slicedHeroes =
+    offset != null && limit != null
+      ? filteredHeroes.slice(offset, offset + limit)
+      : filteredHeroes;
+
   return fakeApiRequest({
-    heroes: filteredHeroes.slice(offset, offset + limit),
+    heroes: slicedHeroes,
     numberOfHeroes: heroes.length
   });
 }

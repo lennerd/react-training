@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Route, Switch, Redirect } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Dashboard from "./dashboard/Dashboard";
 import Heroes from "./hero/Heroes";
 
 export default function TourOfHeroes() {
