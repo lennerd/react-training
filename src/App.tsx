@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import Clock from "./slides/Clock";
 import CustomHooks from "./slides/CustomHooks";
 import ExerciseStopWatch from "./slides/ExerciseStopWatch";
+import Forms from "./slides/Forms";
 import Jsx from "./slides/Jsx";
 import JsxButWhy from "./slides/JsxButWhy";
 import Preface from "./slides/Preface";
@@ -66,6 +67,7 @@ function App() {
       <CustomHooks />
       <ReactQuery />
       <ReactRouter />
+      <Forms />
     </Deck>
   );
 }

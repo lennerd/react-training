@@ -27,7 +27,7 @@ interface CodePaneProps {
 }
 
 export default function CodePane({
-  language = "jsx",
+  language = "tsx",
   highlightRanges,
   children,
   theme = "darcula",
