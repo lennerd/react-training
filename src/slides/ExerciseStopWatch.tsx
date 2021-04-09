@@ -47,6 +47,15 @@ export default function ExerciseStopWatch() {
             </CodeSpan> <CodeSpan>useState</CodeSpan>{" "}
             <CodeSpan>useEffect</CodeSpan>
           </Text>
+          <Text fontSize="h5" textAlign="center">
+            <Link
+              fontSize="h5"
+              href="https://react-training-lennerd.vercel.app/"
+              target="_blank"
+            >
+              react-training-lennerd.vercel.app
+            </Link>
+          </Text>
         </FlexBox>
       </Slide>
       <Slide>
