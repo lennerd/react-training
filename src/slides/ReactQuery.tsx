@@ -8,6 +8,23 @@ export default function ReactQuery() {
   return (
     <>
       <Slide>
+        <FlexBox flexDirection="column" height="100%">
+          <Heading fontSize="h4">
+            Angular vs. React: Framework vs. Library
+          </Heading>
+          <Text textAlign="center">
+            <strong>Angular:</strong> Framework inkl. HttpClient, Routing,
+            Formulare, …
+          </Text>
+          <Text textAlign="center">
+            <strong>React:</strong> Library mit Fokus auf UI/View-Rendering
+          </Text>
+          <Text textAlign="center" color="quaternary">
+            Qual der Wahl vs. Lernkurve
+          </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
         <FlexBox height="100%">
           <Heading fontSize="h3" lineHeight={2} color="quaternary">
             Frontend-Server-Kommunikation
