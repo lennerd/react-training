@@ -95,7 +95,7 @@ export default function Welcome() {
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <Image width="50%" src={lennerdLovesReact} />
-          <Text fontSize="h6">© Frederik Winkler</Text>
+          <Text fontSize="h6">© Fredrik Winkler</Text>
         </FlexBox>
       </Slide>
     </>
