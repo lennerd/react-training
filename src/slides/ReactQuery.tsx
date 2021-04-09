@@ -20,7 +20,7 @@ export default function ReactQuery() {
             <strong>React:</strong> Library mit Fokus auf UI/View-Rendering
           </Text>
           <Text textAlign="center" color="quaternary">
-            Qual der Wahl vs. Lernkurve
+            Lernkurve vs. Qual der Wahl
           </Text>
         </FlexBox>
       </Slide>
