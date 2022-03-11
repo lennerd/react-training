@@ -1,6 +1,7 @@
 import React from "react";
 import { Appear, FlexBox, Heading, Image, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
+import ReactTrainingExample from "../components/ReactTrainingExample";
 import danReactValueUi from "./assets/dan-react-value-ui.jpg";
 
 export default function JsxButWhy() {
@@ -110,16 +111,17 @@ ReactDOM.render(element, document.getElementById("root"));`}
       </Slide>
       <Slide>
         <FlexBox height="100%" flexDirection="column">
-          <Heading
-            fontSize="h4"
-            color="quaternary"
-            opacity={0.2}
-            lineHeight={1.5}
-          >
-            TODO
-            <br />
-            “Inversion of Control ist sau elegant in React”
+          <Heading fontSize="h4" color="quaternary">
+            Inversion of Control 🤩
           </Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample
+            example={"jsx-inversion-of-control"}
+            module="/index.tsx"
+          />
         </FlexBox>
       </Slide>
       <Slide>
