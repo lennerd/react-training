@@ -1,5 +1,5 @@
 import React from "react";
-import { Appear, Box, FlexBox, Heading, Slide, Text } from "spectacle";
+import { FlexBox, Heading, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
 import CodeSpan from "../components/CodeSpan";
 import ReactTrainingExample from "../components/ReactTrainingExample";
@@ -129,18 +129,20 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
           <Heading fontSize="h4">
             <CodeSpan>useState</CodeSpan>-Hook
           </Heading>
-          <Appear>
-            <Box mb={2}>
-              <CodePane>
-                {`
+          <CodePane>
+            {`
 const [state, setState] = React.useState(defaultValue);
           `}
-              </CodePane>
-            </Box>
-          </Appear>
-          <Appear>
-            <CodePane highlightRanges={[2, 6, 7]}>
-              {`
+          </CodePane>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4">
+            <CodeSpan>useState</CodeSpan>-Hook
+          </Heading>
+          <CodePane highlightRanges={[2, 6, 7]}>
+            {`
 function Counter() {
   const [count, setCount] = React.useState(0);
 
@@ -154,8 +156,7 @@ function Counter() {
   );
 }
           `}
-            </CodePane>
-          </Appear>
+          </CodePane>
         </FlexBox>
       </Slide>
       <Slide>
@@ -176,6 +177,19 @@ function Counter() {
       <Slide>
         <FlexBox height="100%">
           <ReactTrainingExample example={"clock-use-state"} />
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4">Seiteneffekte in einer Komponente</Heading>
+          <Text textAlign="center">
+            Wie bringen wir die Clock-Komponente dazu, sich zu aktualisieren?
+          </Text>
+          <Text textAlign="center">
+            Wie registriere ich so etwas wie einen regelmäßigen Intervall? Wie
+            stelle ich sicher, dass dieser Intervall nur solange läuft, wie auch
+            die Komponente im HTML-DOM eingehängt ist?
+          </Text>
         </FlexBox>
       </Slide>
       <Slide>

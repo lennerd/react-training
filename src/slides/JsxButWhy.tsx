@@ -51,9 +51,9 @@ export default function JsxButWhy() {
             JSX & React-Komponenten:
           </Heading>
           <Text textAlign="center" lineHeight={2}>
-            stark kohäsive UI-Bausteine
+            Kohäsive Logik innerhalb Komponente
             <br />
-            lose gekoppelt mit anderen Komponenten
+            Lose Kopplung zwischen Komponenten
           </Text>
         </FlexBox>
       </Slide>

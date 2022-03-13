@@ -39,8 +39,8 @@ export default function ReactRouter() {
           <CodePane
             highlightRanges={[
               [6, 7],
-              [9, 13],
-              [10, 12],
+              [9, 16],
+              [10, 15],
             ]}
           >{`
 import { BrowserRouter, Link, Navigate, Routes, Route } from "react-router-dom";
@@ -53,7 +53,10 @@ function App() {
       
       <Routes>
         <Route path="/heroes" element={<HeroLister />} />
-        <Route path="/heroes/:slug" element={<HeroViewer />} />
+        <Route path="/heroes/:slug">
+          <Route path="" element={<HeroViewer />} />
+          <Route path="edit" element={<HeroEditor />} />
+        </Route>
         <Route path="/" element={<Navigate to="heroes" />} />
       </Routes>
     </BrowserRouter>
