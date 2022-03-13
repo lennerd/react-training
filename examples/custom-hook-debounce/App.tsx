@@ -2,8 +2,8 @@ import React from "react";
 import useDebounce from "./useDebounce";
 
 export default function App() {
-  const [value, setValue] = React.useState("");
-  const debouncedValue = useDebounce(value, 1000);
+  const [value, setValue] = React.useState("Foo");
+  const debouncedValue = useDebounce(value, 500);
 
   return (
     <div>

@@ -1,13 +1,11 @@
 import React from "react";
-import { Hero } from "./api";
+import { Link, useParams } from "react-router-dom";
 import HeroPowerRange from "./HeroPowerRange";
+import useHero from "./useHero";
 
-interface HeroEditorProps {
-  hero: Hero;
-  onSubmit(hero: Hero): void;
-}
-
-export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
+export default function HeroEditor() {
+  const { slug } = useParams<{ slug: string }>();
+  const hero = useHero(slug);
   const [name, setName] = React.useState(hero.name);
   const [gender, setGender] = React.useState(hero.appearance.gender);
   const [intelligence, setIntelligence] = React.useState(
@@ -24,7 +22,7 @@ export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    onSubmit({
+    console.log({
       ...hero,
       name,
       appearance: {
@@ -44,60 +42,73 @@ export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label className="pt-3 flex items-baseline">
-        Name:
-        <input
-          value={name}
-          className="ml-3 px-3 py-2 w-full border rounded"
-          onChange={(event) => setName(event.target.value)}
+    <>
+      <Link
+        to="/heroes"
+        className="text-blue-600 hover:text-blue-700 block mb-4"
+      >
+        Heroes
+      </Link>
+
+      <Link to={`/heroes/${hero.slug}`}>
+        <h2 className="font-bold text-2xl text-blue-600">{hero.name}</h2>
+      </Link>
+
+      <form onSubmit={handleSubmit}>
+        <label className="pt-3 flex items-baseline">
+          Name:
+          <input
+            value={name}
+            className="ml-3 px-3 py-2 w-full border rounded"
+            onChange={(event) => setName(event.target.value)}
+          />
+        </label>
+
+        <label className="pt-3 flex items-baseline">
+          Gender:
+          <select
+            value={gender}
+            className="ml-3 px-3 py-2 w-full border rounded"
+            onChange={(event) => setGender(event.target.value)}
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+
+        <HeroPowerRange
+          value={intelligence}
+          label="Intelligence:"
+          onChange={setIntelligence}
         />
-      </label>
 
-      <label className="pt-3 flex items-baseline">
-        Gender:
-        <select
-          value={gender}
-          className="ml-3 px-3 py-2 w-full border rounded"
-          onChange={(event) => setGender(event.target.value)}
-        >
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </label>
+        <HeroPowerRange
+          value={strength}
+          label="Strength:"
+          onChange={setStrength}
+        />
 
-      <HeroPowerRange
-        value={intelligence}
-        label="Intelligence:"
-        onChange={setIntelligence}
-      />
+        <HeroPowerRange value={speed} label="Speed:" onChange={setSpeed} />
 
-      <HeroPowerRange
-        value={strength}
-        label="Strength:"
-        onChange={setStrength}
-      />
+        <HeroPowerRange
+          value={durability}
+          label="Durability:"
+          onChange={setDurability}
+        />
 
-      <HeroPowerRange value={speed} label="Speed:" onChange={setSpeed} />
+        <HeroPowerRange value={power} label="Power:" onChange={setPower} />
 
-      <HeroPowerRange
-        value={durability}
-        label="Durability:"
-        onChange={setDurability}
-      />
+        <HeroPowerRange value={combat} label="Combat:" onChange={setCombat} />
 
-      <HeroPowerRange value={power} label="Power:" onChange={setPower} />
-
-      <HeroPowerRange value={combat} label="Combat:" onChange={setCombat} />
-
-      <div className="mt-4">
-        <button
-          type="submit"
-          className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
-        >
-          Save Hero
-        </button>
-      </div>
-    </form>
+        <div className="mt-4">
+          <button
+            type="submit"
+            className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
+          >
+            Save Hero
+          </button>
+        </div>
+      </form>
+    </>
   );
 }

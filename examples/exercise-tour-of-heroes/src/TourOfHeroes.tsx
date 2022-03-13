@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route, Switch, Redirect } from "react-router-dom";
+import { Navigate, NavLink, Route, Routes } from "react-router-dom";
 import Dashboard from "./dashboard/Dashboard";
 import Heroes from "./hero/Heroes";
 
@@ -33,17 +33,11 @@ export default function TourOfHeroes() {
           </nav>
         </header>
         <main className="border-t mt-4 pt-4">
-          <Switch>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-            <Route path="/heroes">
-              <Heroes />
-            </Route>
-            <Route path="/" exact>
-              <Redirect to="/dashboard" />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/heroes" element={<Heroes />} />
+            <Route path="/" element={<Navigate to="/dashboard" />} />
+          </Routes>
         </main>
       </div>
     </>

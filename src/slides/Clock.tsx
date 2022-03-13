@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, FlexBox, Heading, Slide, Text } from "spectacle";
+import { Appear, Box, FlexBox, Heading, Slide, Text } from "spectacle";
 import CodePane from "../components/CodePane";
 import CodeSpan from "../components/CodeSpan";
 import ReactTrainingExample from "../components/ReactTrainingExample";
@@ -107,7 +107,7 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
             Details der Implementierung
           </Text>
           <Text textAlign="center">
-            Datum: <strong>State</strong> der Komponente
+            Datum: <strong>Zustand</strong> der Komponente
           </Text>
           <Text textAlign="center">
             Interval: <strong>Effekt</strong>, der Datum-State aktualisiert
@@ -116,20 +116,33 @@ deconstruct({ a: 10, b: 20 }); // 10, 20
       </Slide>
       <Slide>
         <FlexBox height="100%" flexDirection="column">
+          <Heading fontSize="h4">Zustand in einer Komponente</Heading>
+          <Text textAlign="center">Wie implementieren wir Zustand?</Text>
+          <Text textAlign="center">
+            Wie haben ja nur Funktionen als Komponenten. Und Funktionen haben
+            (im Gegensatz zu Klassen) keinen Zustand.
+          </Text>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
           <Heading fontSize="h4">
             <CodeSpan>useState</CodeSpan>-Hook
           </Heading>
-          <Box mb={2}>
-            <CodePane>
-              {`
-const [state, setState] = useState(defaultValue);
+          <Appear>
+            <Box mb={2}>
+              <CodePane>
+                {`
+const [state, setState] = React.useState(defaultValue);
           `}
-            </CodePane>
-          </Box>
-          <CodePane highlightRanges={[2, 6, 7]}>
-            {`
+              </CodePane>
+            </Box>
+          </Appear>
+          <Appear>
+            <CodePane highlightRanges={[2, 6, 7]}>
+              {`
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = React.useState(0);
 
   return (
     <div>
@@ -141,12 +154,15 @@ function Counter() {
   );
 }
           `}
-          </CodePane>
+            </CodePane>
+          </Appear>
         </FlexBox>
       </Slide>
       <Slide>
         <FlexBox flexDirection="column" height="100%">
-          <Heading fontSize="h4">Angular vs. React: Change Detection</Heading>
+          <Heading fontSize="h4">
+            Angular vs. React: Zustandsänderungen erkennen
+          </Heading>
           <Text textAlign="center">
             <strong>Angular:</strong> <CodeSpan>NgZone</CodeSpan>,
             Monkey-Patching asynchroner Funktionen (DOM-Events, Outputs,
@@ -163,21 +179,22 @@ function Counter() {
         </FlexBox>
       </Slide>
       <Slide>
-        <FlexBox flexDirection="column">
+        <FlexBox flexDirection="column" height="100%">
           <Heading fontSize="h4">
             <CodeSpan>useEffect</CodeSpan>-Hook
           </Heading>
           <FlexBox>
-            <Box mr={2}>
-              <CodePane>
-                {`
-useEffect(() => {
+            <CodePane>
+              {`
+React.useEffect(() => {
   // Effekt initialisieren
-  console.log('component was mounted');
+  console.log('component has mounted');
+  console.log('dependency has changed');
   
   return () => {
     // Effekt beenden
-    console.log('component was destroyed');
+    console.log('component gets destroyed');
+    console.log('dependency has changed');
   };
 }, [
   // Effekt nur ausführen, wenn sich
@@ -185,8 +202,16 @@ useEffect(() => {
   dependency
 ]);
           `}
-              </CodePane>
-            </Box>
+            </CodePane>
+          </FlexBox>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox flexDirection="column">
+          <Heading fontSize="h4">
+            <CodeSpan>useEffect</CodeSpan>-Hook
+          </Heading>
+          <FlexBox>
             <CodePane highlightRanges={[[4, 17], 11, 15, 17]}>
               {`
 function OnlineStatus({ friendId }) {

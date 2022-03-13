@@ -39,27 +39,24 @@ export default function ReactRouter() {
           <CodePane
             highlightRanges={[
               [6, 7],
-              [9, 16],
+              [9, 13],
               [10, 12],
             ]}
           >{`
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-      </Switch>
-    </Router>
+      <Routes>
+        <Route path="/heroes" element={<HeroLister />} />
+        <Route path="/heroes/:slug" element={<HeroViewer />} />
+        <Route path="/" element={<Navigate to="heroes" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
  `}</CodePane>
