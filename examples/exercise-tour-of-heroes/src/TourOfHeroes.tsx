@@ -14,8 +14,14 @@ export default function TourOfHeroes() {
               <li className="px-3">
                 <NavLink
                   to="/dashboard"
-                  className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
-                  activeClassName="bg-pink-200 hover:bg-pink-300"
+                  className={({ isActive }) =>
+                    [
+                      "inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300",
+                      isActive && "bg-pink-200 hover:bg-pink-300",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")
+                  }
                 >
                   Dashboard
                 </NavLink>
@@ -23,8 +29,14 @@ export default function TourOfHeroes() {
               <li className="px-3">
                 <NavLink
                   to="/heroes"
-                  className="inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300"
-                  activeClassName="bg-pink-200 hover:bg-pink-300"
+                  className={({ isActive }) =>
+                    [
+                      "inline-block px-3 py-1 bg-blue-200 rounded hover:bg-blue-300",
+                      isActive && "bg-pink-200 hover:bg-pink-300",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")
+                  }
                 >
                   Heroes
                 </NavLink>
@@ -35,7 +47,7 @@ export default function TourOfHeroes() {
         <main className="border-t mt-4 pt-4">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/heroes" element={<Heroes />} />
+            <Route path="/heroes/*" element={<Heroes />} />
             <Route path="/" element={<Navigate to="/dashboard" />} />
           </Routes>
         </main>
