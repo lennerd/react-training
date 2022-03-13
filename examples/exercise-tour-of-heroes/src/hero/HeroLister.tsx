@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import usePagination from "../common/hooks/usePagination";
 import Pagination from "../common/Pagination";
 import HeroGrid from "./HeroGrid";
@@ -8,7 +8,7 @@ import useHeroes from "./useHeroes";
 const HEROES_PER_PAGE = 24;
 
 export default function HeroLister() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = React.useState("");
   const { activePage, setActivePage, getPages, offset, limit } = usePagination(
     HEROES_PER_PAGE
   );

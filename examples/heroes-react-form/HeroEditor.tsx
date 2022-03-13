@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import React from "react";
 import { Hero } from "./api";
 import HeroPowerRange from "./HeroPowerRange";
 
@@ -8,18 +8,20 @@ interface HeroEditorProps {
 }
 
 export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
-  const [name, setName] = useState(hero.name);
-  const [gender, setGender] = useState(hero.appearance.gender);
-  const [intelligence, setIntelligence] = useState(
+  const [name, setName] = React.useState(hero.name);
+  const [gender, setGender] = React.useState(hero.appearance.gender);
+  const [intelligence, setIntelligence] = React.useState(
     hero.powerstats.intelligence
   );
-  const [strength, setStrength] = useState(hero.powerstats.strength);
-  const [durability, setDurability] = useState(hero.powerstats.durability);
-  const [speed, setSpeed] = useState(hero.powerstats.speed);
-  const [power, setPower] = useState(hero.powerstats.power);
-  const [combat, setCombat] = useState(hero.powerstats.combat);
+  const [strength, setStrength] = React.useState(hero.powerstats.strength);
+  const [durability, setDurability] = React.useState(
+    hero.powerstats.durability
+  );
+  const [speed, setSpeed] = React.useState(hero.powerstats.speed);
+  const [power, setPower] = React.useState(hero.powerstats.power);
+  const [combat, setCombat] = React.useState(hero.powerstats.combat);
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     onSubmit({
@@ -27,7 +29,7 @@ export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
       name,
       appearance: {
         ...hero.appearance,
-        gender
+        gender,
       },
       powerstats: {
         ...hero.powerstats,
@@ -36,8 +38,8 @@ export default function HeroEditor({ hero, onSubmit }: HeroEditorProps) {
         durability,
         speed,
         power,
-        combat
-      }
+        combat,
+      },
     });
   };
 

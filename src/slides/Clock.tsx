@@ -172,10 +172,12 @@ function Counter() {
               <CodePane>
                 {`
 useEffect(() => {
-  // Komponente wurde in DOM eingehängt
+  // Effekt initialisieren
+  console.log('component was mounted');
   
   return () => {
-    // Komponente wird aus DOM entfernt
+    // Effekt beenden
+    console.log('component was destroyed');
   };
 }, [
   // Effekt nur ausführen, wenn sich
@@ -185,19 +187,22 @@ useEffect(() => {
           `}
               </CodePane>
             </Box>
-            <CodePane highlightRanges={[[4, 14], 9, 12]}>
+            <CodePane highlightRanges={[[4, 17], 11, 15, 17]}>
               {`
 function OnlineStatus({ friendId }) {
-  const [isOnline, setIsOnline] = useState(false);
+  const [isOnline, setIsOnline] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleStatusChange = (status) => {
       setIsOnline(status.isOnline);
     }
   
+    // Component mounted or friend ID was changed:
+    // Subscribe to friend status
     FriendAPI.subscribe(friendId, handleStatusChange);
     
     return () => {
+      // Unsubscribe from friend status 
       FriendAPI.unsubscribe(friendId, handleStatusChange);
     }
   }, [friendId]);

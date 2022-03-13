@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import formatNumber from "./formatNumber";
 
 export default function StopWatch() {
-  const [isRunning, setIsRunning] = useState(false);
-  const [elapsed, setElapsed] = useState(0);
+  const [isRunning, setIsRunning] = React.useState(false);
+  const [elapsed, setElapsed] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isRunning) {
       return;
     }

@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export default function usePromise<T>(
   callback: () => Promise<T>,
   deps: any[]
 ): { data: T | undefined; error: any } {
-  const [data, setData] = useState<T>();
-  const [error, setError] = useState<any>();
+  const [data, setData] = React.useState<T>();
+  const [error, setError] = React.useState<any>();
 
-  useEffect(() => {
+  React.useEffect(() => {
     let mounted = true;
 
     callback()

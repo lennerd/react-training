@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React from "react";
 
 interface UncontrolledNameInputProps {
   defaultName: string;
@@ -7,19 +7,21 @@ interface UncontrolledNameInputProps {
 
 export default function UncontrolledNameInput({
   defaultName,
-  onChange
+  onChange,
 }: UncontrolledNameInputProps) {
-  const [name, setName] = useState(defaultName);
+  const [name, setName] = React.useState(defaultName);
   const [firstName, lastName] = name.replace(/\s+/, " ").split(" ", 2);
 
-  const handleFirstNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFirstNameChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const name = `${event.target.value} ${lastName}`;
 
     setName(name);
     onChange(name);
   };
 
-  const handleLastNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = `${firstName} ${event.target.value}`;
 
     setName(name);

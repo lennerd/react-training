@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React from "react";
 
 export default function usePagination(
   itemsPerPage: number
@@ -9,7 +9,7 @@ export default function usePagination(
   offset: number;
   limit: number;
 } {
-  const [activePage, setActivePage] = useState(1);
+  const [activePage, setActivePage] = React.useState(1);
   /*const slice = useCallback(
     (data: any[] | undefined) => {
       if (data == null) {
@@ -31,7 +31,7 @@ export default function usePagination(
     [itemsPerPage, activePage]
   );*/
 
-  const getPages = useCallback(
+  const getPages = React.useCallback(
     (numberOfItems: number | undefined) => {
       if (numberOfItems == null) {
         return [];
@@ -54,6 +54,6 @@ export default function usePagination(
     setActivePage,
     getPages,
     offset,
-    limit
+    limit,
   };
 }

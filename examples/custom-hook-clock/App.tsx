@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import TimeZoneOffset from "./TimeZoneOffset";
 import useClock from "./useClock";
 
 export default function App() {
-  const [timeZoneOffset, setTimeZoneOffset] = useState(0);
+  const [timeZoneOffset, setTimeZoneOffset] = React.useState(0);
   const dateWithOffset = useClock(timeZoneOffset);
   const date = useClock();
 

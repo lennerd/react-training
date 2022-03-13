@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Clock from "./Clock";
 import TimeZoneOffset from "./TimeZoneOffset";
 import styles from "./App.module.css";
 
 export default function App() {
-  const [timeZoneOffset, setTimeZoneOffset] = useState(0);
+  const [timeZoneOffset, setTimeZoneOffset] = React.useState(0);
 
   return (
     <div className={styles.App}>

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React from "react";
 import HeroGrid from "./HeroGrid";
 import HeroFilter from "./HeroFilter";
 import useHeroes from "./useHeroes";
 
 export default function HeroLister() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = React.useState("");
   const heroes = useHeroes(filter);
 
   return (

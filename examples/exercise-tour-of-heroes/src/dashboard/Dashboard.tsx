@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import { Hero } from "../api";
 import HeroGrid from "../hero/HeroGrid";
 import useHeroes from "../hero/useHeroes";
@@ -18,7 +18,7 @@ type Criteria = keyof Hero["powerstats"];
 
 export default function Dashboard() {
   const { heroes } = useHeroes();
-  const [criteria, setCriteria] = useState<Criteria>("strength");
+  const [criteria, setCriteria] = React.useState<Criteria>("strength");
 
   if (heroes == null) {
     return <div>Loading heroes …</div>;

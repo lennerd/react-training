@@ -1,10 +1,10 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = React.useState("");
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
 

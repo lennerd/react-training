@@ -56,6 +56,14 @@ export default function CustomHooks() {
           />
         </FlexBox>
       </Slide>
+      <Slide>
+        <FlexBox height="100%">
+          <ReactTrainingExample
+            example={"custom-hook-debounce"}
+            module="/App.tsx"
+          />
+        </FlexBox>
+      </Slide>
     </>
   );
 }

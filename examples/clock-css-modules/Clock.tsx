@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Clock.module.css";
 
 interface ClockProps {
@@ -6,9 +6,9 @@ interface ClockProps {
 }
 
 export default function Clock({ timeZoneOffset = 0 }: ClockProps) {
-  const [date, setDate] = useState(() => new Date());
+  const [date, setDate] = React.useState(() => new Date());
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date();
       date.setHours(date.getHours() + timeZoneOffset);

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import ControlledNameInput from "./ControlledNameInput";
 import UncontrolledNameInput from "./UncontrolledNameInput";
 
 function App() {
-  const [name, setName] = useState("Workplace Solutions");
+  const [name, setName] = React.useState("Workplace Solutions");
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export interface Size {
   width: number;
@@ -13,9 +13,9 @@ function getWindowSize() {
 }
 
 export default function useWindowSize(): Size {
-  const [size, setSize] = useState(getWindowSize());
+  const [size, setSize] = React.useState(getWindowSize());
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleResize = () => {
       setSize(getWindowSize());
     };

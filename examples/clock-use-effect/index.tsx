@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 function Clock() {
-  const [date, setDate] = useState(() => new Date());
+  const [date, setDate] = React.useState(() => new Date());
 
   // Effect-Hook mit Effect-Callback
-  useEffect(
+  React.useEffect(
     () => {
       // After mount/init …
       const interval = setInterval(() => {

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const ClockWrapper = styled.div`
   font-weight: bold;
@@ -10,9 +10,9 @@ interface ClockProps {
 }
 
 export default function Clock({ timeZoneOffset = 0 }: ClockProps) {
-  const [date, setDate] = useState(() => new Date());
+  const [date, setDate] = React.useState(() => new Date());
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date();
       date.setHours(date.getHours() + timeZoneOffset);

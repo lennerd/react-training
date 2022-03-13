@@ -1,10 +1,12 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import Clock from "./Clock";
 
 export default function App() {
-  const [timeZoneOffset, setTimeZoneOffset] = useState(0);
+  const [timeZoneOffset, setTimeZoneOffset] = React.useState(0);
 
-  const handleTimeZoneOffsetChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleTimeZoneOffsetChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setTimeZoneOffset(Number(event.target.value) % 24);
   };
 

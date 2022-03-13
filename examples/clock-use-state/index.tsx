@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 function Clock() {
   // State-Hook mit initialer State-Wert-Factory
-  const [date, setDate] = useState(() => new Date());
+  const [date, setDate] = React.useState(() => new Date());
 
   console.log("Render clock …");
 
-  // Aber das Datum ändert sich nicht!
-  // setDate??
+  // Aber das Datum ändert sich nicht?
   return <strong>Es ist {date.toLocaleTimeString()}.</strong>;
 }
 

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export default function useClock(timeZoneOffset = 0): Date {
-  const [date, setDate] = useState(() => new Date());
+  const [date, setDate] = React.useState(() => new Date());
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date();
       date.setHours(date.getHours() + timeZoneOffset);

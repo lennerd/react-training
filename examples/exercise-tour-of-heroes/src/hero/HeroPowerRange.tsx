@@ -1,17 +1,17 @@
-import { ChangeEvent, forwardRef, useState } from "react";
+import React from "react";
 
 interface HeroPowerRangeProps {
   label: string;
   name: string;
   defaultValue: number;
-  onChange(event: ChangeEvent<HTMLInputElement>): void;
+  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-const HeroPowerRange = forwardRef<HTMLInputElement, HeroPowerRangeProps>(
+const HeroPowerRange = React.forwardRef<HTMLInputElement, HeroPowerRangeProps>(
   ({ onChange, defaultValue, label, name }, ref) => {
-    const [value, setValue] = useState<number>(defaultValue);
+    const [value, setValue] = React.useState<number>(defaultValue);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       onChange(event);
       setValue(Number(event.target.value));
     };
