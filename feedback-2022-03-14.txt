@@ -1,0 +1,10 @@
+TODO Node 14 als Vorbereitung
+TODO Update der Dependencies? Inhaltsverzeichnis?
+TODO Hint zu Typescript bei useState
+TODO QueryClient erwähnen/hervorheben
+TODO useParams erwähnen/hervorheben
+TODO Router-Beispiele um Outlet erweitern
+TODO key in JSX lists
+
+- Vormittag eventuell noch etwas mehr Zeit nehmen
+- Nachmittag passt so als Überblick ganz gut
